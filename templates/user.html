@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+    个人详情页
+{% endblock %}
+{% block head %}
+    <a class="btn btn-light btn-sm" role="button" href="javascript:history.back()">《《返回上一页</a>
+    <style>
+        img {
+            width: 160px;
+            height: 200px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    {% for i in data_dict %}
+        <div class="card mb-1" style="max-width: 1000px;max-height: 500px">
+        <div class="row no-gutters">
+        <div class="col-md-3">
+            <img src="/static/{{ i[0] }}.JPG" alt="{{ i[1] }}的照片">
+        </div>
+        <div class="col-md-9">
+        <div class="card-body">
+        <h5 class="card-title">{{ i[1] }}的个人详情页</h5>
+        <p class="card-text">姓名: {{ i[1] }}</p>
+        <p class="card-text">性别: {{ i[2] }}</p>
+        <p class="card-text">年龄: {{ age }}</p>
+        <p class="card-text">距离生日还有:{{ year }}天</p>
+        <p class="card-text">出生年月: {{ i[3] }}</p>
+        <p class="card-text">属相: {{ i[4] }}</p>
+        <p class="card-text">电话号码: {{ i[5] }}</p>
+    {% endfor %}
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

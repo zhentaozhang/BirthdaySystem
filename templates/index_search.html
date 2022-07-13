@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+    老张家生日管理
+{% endblock %}
+{% block head %}
+    <a class="btn btn-light btn-sm" role="button" href="javascript:history.back()">《《返回上一页</a>
+{% endblock %}
+{% block body %}
+    <div>
+        <table class="table table-hover ">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">序号</th>
+                <th scope="col">姓名</th>
+                <th scope="col">年龄</th>
+                <th scope="col">距离生日</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in data_dict %}
+                <tr>
+                    <td><a href="{{ url_for("register.detail",detail_id=i.id) }}"> {{ i[0] }}</a></td>
+                    <td><a href="{{ url_for("register.detail",detail_id=i.id) }}"> {{ i[1] }}</a></td>
+                    <td><a href="{{ url_for("register.detail",detail_id=i.id) }}"> {{ years[i.id] }}岁</a></td>
+                    <td><a href="{{ url_for("register.detail",detail_id=i.id) }}"> {{ days[i.id] }}天</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
